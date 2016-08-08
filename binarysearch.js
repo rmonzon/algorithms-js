@@ -1,4 +1,5 @@
-function binaryIndexOf(searchElement) {
+//Function added to native's Array prototype, returns the index of the element we're looking for
+Array.prototype.binarySearch = function (searchElement) {
     var minIndex = 0, maxIndex = this.length - 1, currentIndex;
     while (minIndex <= maxIndex) {
     	//num | 0 is the same as Math.floor(num) but a bit faster
@@ -14,4 +15,4 @@ function binaryIndexOf(searchElement) {
         }
     }
     return -1;
-}
+};
