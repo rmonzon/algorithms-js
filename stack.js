@@ -10,3 +10,6 @@ Stack.prototype.pop = function () {
 Stack.prototype.top = function () {
 	return this.data[0];
 };
+Stack.prototype.isEmpty = function () {
+	return this.data.length === 0;
+};
