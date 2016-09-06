@@ -14,6 +14,8 @@ Here is a compilation of commonly used algorithms and utility functions that can
 
 5- Remove duplicates from array
 
+6- Dijkstra's shortest path finder
+
 --- Data Structures ---
 
 1- Binary Search Tree
@@ -21,3 +23,5 @@ Here is a compilation of commonly used algorithms and utility functions that can
 2- Queue
 
 3- Stack
+
+4- Graph
