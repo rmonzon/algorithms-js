@@ -12,7 +12,7 @@ Here is a compilation of commonly used algorithms and utility functions that can
 
 4- Algorithm to flatten multi-dimensional arrays
 
-5- Remove duplicates from array
+5- Find and Remove duplicates from array
 
 6- Dijkstra's shortest path finder
 
