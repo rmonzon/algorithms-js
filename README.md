@@ -16,6 +16,8 @@ Here is a compilation of commonly used algorithms and utility functions that can
 
 6- Dijkstra's shortest path finder
 
+7- Sum of Big Numbers
+
 --- Data Structures ---
 
 1- Binary Search Tree
