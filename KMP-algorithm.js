@@ -1,12 +1,12 @@
 function longestPrefix(str) {
-  var table = new Array(str.length);
-  var maxPrefix = 0;
+  let table = new Array(str.length);
+  let maxPrefix = 0;
   table[0] = 0;
-  for (var i = 1; i < str.length; i++) {
-    while (maxPrefix > 0 && str.charAt(i) !== str.charAt(maxPrefix)) {
+  for (let i = 1; i < str.length; i++) {
+    while (maxPrefix > 0 && str[i] !== str[maxPrefix]) {
       maxPrefix = table[maxPrefix - 1];
     }
-    if (str.charAt(maxPrefix) === str.charAt(i)) {
+    if (str[maxPrefix] === str[i]) {
       maxPrefix++;
     }
     table[i] = maxPrefix;
@@ -14,28 +14,28 @@ function longestPrefix(str) {
   return table;
 }
 
-// Find all the patterns that matches in a given string `str`
-// this algorithm is based on the Knuth–Morris–Pratt algorithm. Its beauty consists in that it performs the matching in O(n)
+// Find all the matches for a 'pattern' that match in a given string `str`
+// this algorithm is based on the Knuth–Morris–Pratt algorithm. Time complexity: O(n)
 function kmpMatching(str, pattern) {
-  var prefixes = longestPrefix(pattern);
-  var matches = [];
-  var j = 0;
-  var i = 0;
+  let prefixes = longestPrefix(pattern);
+  let matches = [], j = 0, i = 0;
   while (i < str.length) {
-    if (str.charAt(i) === pattern.charAt(j)) {
+    if (str[i] === pattern[j]) {
       i++;
       j++;
     }
     if (j === pattern.length) {
-      matches.push(i-j);
-      j = prefixes[j-1];
+      matches.push(i - j);
+      j = prefixes[j - 1];
     }
-    else if (str.charAt(i) !== pattern.charAt(j)) {
+    else {
+      if (str[i] !== pattern[j]) {
         if (j !== 0) {
-            j = prefixes[j-1];
+            j = prefixes[j - 1];
         } else {
             i++;
         }
+      }
     }
   }
   return matches;
