@@ -2,7 +2,7 @@ Algorithms and utility functions implemented in Javascript
 
 Here is a compilation of commonly used algorithms and utility functions that can help you write good and optimized javascript code. The list of functions included below
 
---- Algorithms ---
+`--- Algorithms ---`
 
 1- Binary Search algorithm for sorted arrays
 
@@ -18,12 +18,15 @@ Here is a compilation of commonly used algorithms and utility functions that can
 
 7- Sum of Big Numbers
 
---- Data Structures ---
 
-1- Binary Search Tree
+`--- Data Structures ---`
+
+1- Linked List 
 
 2- Queue
 
 3- Stack
 
-4- Graph
+4- Binary Search Tree
+
+5- Graph
