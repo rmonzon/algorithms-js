@@ -1,14 +1,19 @@
 // Recursive approach in O(n!) time
-var generatePermutation = (str, prefix) => {
-    let n = str.length;
-    if (n === 0) {
-    	console.log(prefix);
-    }
-    else {
-        for (let i = 0; i < n; i++) {
-            generatePermutation(str.substring(0, i) + str.substring(i+1, n), prefix + str[i]);
-        }
-    }
+function findAllPermutations(str) {
+  permutationsRecursive(str, "");
 }
 
-generatePermutation("1234", "");
+function permutationsRecursive(str, prefix) {
+  const n = str.length;
+  if (n === 0) {
+    console.log(prefix);
+  }
+  else {
+    for (let i = 0; i < n; i++) {
+      const rem = str.substring(0, i) + str.substring(i + 1);
+      permutationsRecursive(rem, prefix + str[i]);
+    }
+  }
+}
+
+findAllPermutations('abcd');
