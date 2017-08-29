@@ -1,4 +1,4 @@
-// Recursive approach in O(n!) time
+// Recursive approach in O(n^2 * n!) time
 function findAllPermutations(str) {
   permutationsRecursive(str, "");
 }
