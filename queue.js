@@ -1,4 +1,18 @@
 class Queue {
+	constructor() {
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+class Queue {
   constructor() {
     this.data = [];  
   }
