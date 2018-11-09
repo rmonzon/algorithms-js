@@ -1,5 +1,6 @@
 /**
- * Generates a random integer between the specified values. The value is no lower * than 'min', and is less than (but not equal to) 'max' 
+ * Generates a random integer between the specified values. The value is no lower * than 'min', 
+ * and is less than (but not equal to) 'max'.
  * 
  * @param {Number} min - Number representing the lower bound of the interval
  * @param {Number} max - Number representing the upper bound of the interval
@@ -12,7 +13,7 @@ function getRandomNumber(min, max) {
 }
 
 /**
- * Generates a unique alphanumeric string of length 'size'
+ * Generates a unique alphanumeric string of length 'size'.
  * 
  * @param {Number} size - Desired length of the alphanumeric string
  * @returns {string}
