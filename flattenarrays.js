@@ -17,3 +17,9 @@ function flattenArray(array, res) {
 	}
 	return res;
 }
+
+flattenArray([1, 2, [3, 4, [5]], 6], []); // [1, 2, 3, 4, 5, 6]
+
+First recursive call - flattenArray([3, 4, [5]], [1, 2]);
+
+Second recursive call - flattenArray([5], [1, 2, 3, 4]); // [1, 2, 3, 4, 5]
