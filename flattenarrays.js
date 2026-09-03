@@ -20,13 +20,32 @@ function flattenArray(array, res) {
 // Using Array.prototype.some without recursion
 function flattenArray(array) {
 	while (array.some(Array.isArray)) {
-   		array = [].concat(...array);
+		array = array.flat();
+   		// array = [].concat(...array); works as well
   	}
   	return array;
 }
 
+// Flatten array by level, first non-nested elements, then one level nested and so on
+function flattenArrayByLevel(array) {
+  const levels = [];
+  function flatten(arr, depth) {
+    if (!levels[depth]) {
+      levels[depth] = [];
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        flatten(arr[i], depth + 1);
+      } else {
+        levels[depth].push(arr[i]);
+      }
+    }
+  }
+  flatten(array, 0);
+  // flat the levels array before returning
+  return levels.flat();
+}
+
 flattenArray([1, 2, [3, 4, [5]], 6], []); // [1, 2, 3, 4, 5, 6]
 
-First recursive call - flattenArray([3, 4, [5]], [1, 2]);
-
-Second recursive call - flattenArray([5], [1, 2, 3, 4]); // [1, 2, 3, 4, 5]
+flattenArrayByLevel([1, 2, [3, 4, [5, 6]], 7, [8, [9, [10]]]]); // [1, 2, 7, 3, 4, 8, 5, 6, 9, 10]
